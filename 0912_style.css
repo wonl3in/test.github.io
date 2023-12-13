@@ -1,0 +1,47 @@
+
+@media screen and (max-width: 1300px) {
+    #fullscreen {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 1300px) {
+    #mobile {
+        display: none;
+    }
+}
+
+
+#mobile {
+  background-color: black;
+  position: absolute;
+  top: 40%;
+  width: 99%;
+  text-align: center;
+  font-size: 25px;
+  color: white;
+}
+
+/* ---------------------------------------*/
+
+body{
+    margin: 0;
+    height: 3000px;
+    background-color: rgb(255, 255, 255);
+}
+
+.centered-text {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none; /* 초기에는 숨김 처리 */
+    text-align: center;
+}
+  
+.centered-text p {
+    font-size: 24px;
+    color: #000;
+}
+  
+
