@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>스크롤 애니메이션</title>
+    <style>
+      body {
+        height: 2000px; /* 스크롤을 테스트하기 위한 높이 */
+        margin: 0;
+        font-family: Arial, sans-serif;
+        letter-spacing: -2px;
+      }
+      .center-text {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        font-size: 50px;
+        transform: translate(-50%, -50%) scale(0); /* 초기에는 텍스트를 숨기고 크기를 0으로 조정합니다. */
+        transition: transform 0.5s ease-in-out;
+      }
+      .show {
+        transform: translate(-50%, -50%) scale(1); /* 텍스트가 나타나면서 크기가 커집니다. */
+      }
+    </style>
+</head>
+<body>
+
+    <div class="center-text" id="text1">
+        <div class="animate__animated animate__fadeIn">
+          첫 번째 텍스트
+        </div>
+    <div class="center-text" id="text2">
+        <div class="animate__animated animate__fadeIn">
+          첫 번째 텍스트
+      </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        $(window).scroll(function() {
+          var scrollPos = $(window).scrollTop();
+      
+          // 특정 위치에서 첫 번째 텍스트를 숨기고 두 번째 텍스트를 보여줍니다.
+          if (scrollPos > 200) {
+            $('#text1').removeClass('show');
+            $('#text2').addClass('show');
+          } else {
+          // 스크롤 위치가 다시 위로 올라가면 다시 첫 번째 텍스트를 보여줍니다.
+            $('#text1').addClass('show');
+            $('#text2').removeClass('show');
+          }
+        });
+      });
+</script>
+
+</body>
+</html>
